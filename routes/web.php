@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\booking;
+use App\Models\Bookingform;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +41,9 @@ Route::get('/team', function () {
 
 Route::get('/booking',[booking::class,'index']);
 Route::post('/booking',[booking::class,'result']);
+
+Route::get('/bookingform', function(){
+$bookingform = Bookingform::all();
+echo "<pre>";
+print_r($bookingform->toArray());
+});

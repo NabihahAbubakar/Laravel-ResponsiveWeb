@@ -18,5 +18,16 @@
     @yield('aboutus')
     @yield('team')
     @include('layout.footer')
+
+{{-- menu icon js --}}
+<script>
+const sidebar = document.getElementById('sidebar');
+const hamIcon = document.querySelector('.ham');
+function toggleSidebar() {
+  sidebar.classList.toggle('show-sidebar'); 
+}
+hamIcon.addEventListener('click', toggleSidebar);
+</script>
+      
 </body>
 </html>

@@ -55,7 +55,10 @@
   height: 400px;
   margin-top: 75px;
   background: rgba(20, 108, 140, 0.6);
-   right:-100%;                            /*      property to hide sidebar */
+   right:-100%;           /*      property to hide sidebar */
+   &.show-sidebar {       /*      property to show sidebar */
+    right: 0;
+  }                          
 }
 
 
@@ -76,6 +79,9 @@
 #check{
 display: none;
 }
+
+
+
 
 
 @media screen and (max-width: 780px) {
@@ -333,6 +339,20 @@ input[type="submit"]:hover {
   background-color: rgb(13, 60, 89);
   color: #fff;
   font-size: 17.5px;
+}
+
+.alert {
+  margin-top: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
 }
 
 /* contact form */
@@ -609,41 +629,87 @@ main {
   border: 5px solid rgb(4, 4, 4);
   border-radius: 50%;
 }
-
-/* footer */
-footer{
-  display: flex;
-  align-items:normal;
-  justify-content: space-evenly;
-  background-color: #241f1f;
-  height: 40vh;
-  padding: 10vh;
-  font-size: 1.5rem;
-
+/* new footer */
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
 }
-.footer2 ul li{
-  color: #ccc;
-  list-style: none;
+
+.footer1 {
+  text-align: center;
 }
-.footer2 ul li a{
+.footer2,
+.footer3 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+footer a {
+  color: #fff;
   text-decoration: none;
-  color: #ccc;
-}
-.footer3 ul{
-  
-  list-style: none;
-}
-.footer3 ul li a{
-  text-decoration: none;
-  color: #ccc;
+  font-size: 18px;
 }
 
+footer i {
+  margin-bottom: 30px; 
+}
+
+
+@media (max-width: 767px) {
+  footer {
+    text-align: center;
+  }
+
+.footer1 {
+    margin-bottom: 20px;
+  }
+
+.footer2,
+.footer3 {
+    margin-top: 0;
+  }
+}
+
+
+@media (min-width: 768px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.footer1 {
+    flex: 1;
+    text-align: left;
+  }
+
+.footer2,
+.footer3 {
+    flex: 2;
+    text-align: center;
+    margin-top: 0;
+  }
+}
 
 .copyright{
-  background-color: #362f2f;
+  color: #333;
+  background-color: #000000;
   margin-bottom: 0%;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 30px;
+  
 }

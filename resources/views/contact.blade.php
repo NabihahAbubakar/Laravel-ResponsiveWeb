@@ -28,7 +28,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstName">
+                    <input type="text" id="firstName" name="firstName" value="{{old('firstName')}}" />
                     <span id="error">
                         @error('firstName')
                         {{$message}}
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName">
+                    <input type="text" id="lastName" name="lastName" value="{{old('lastName')}}" />
                     <span id="error">
                         @error('lastName')
                         {{$message}}
@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="number" id="phoneNumber" name="phoneNumber">
+                    <input type="number" id="phoneNumber" name="phoneNumber" value="{{old('phoneNumber')}}" />
                     <span id="error">
                         @error('phoneNumber')
                         {{$message}}
@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                     <label for="date">Date</label>
-                    <input type="date" id="date" name="date">
+                    <input type="date" id="date" name="date" value="{{old('date')}}" />
                     <span id="error">
                         @error('date')
                         {{$message}}
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                     <label for="appointmentTime">Appointment Time</label>
-                    <input type="time" id="appointmentTime" name="appointmentTime">
+                    <input type="time" id="appointmentTime" name="appointmentTime" value="{{old('appointmentTime')}}" />
                     <span id="error">
                         @error('appointmentTime')
                         {{$message}}
@@ -72,7 +72,7 @@
                     </span>
                 </div>
                 {{-- using booking form component --}}
-                <x-bookingform $type="text" $name="text" $label="Ufone" />
+                {{-- <x-bookingform type="text" name="text" label="Ufone" /> --}}
 
 
 
@@ -82,6 +82,15 @@
                 <div class="form-group">
                     
                     <input type="submit" value="Book Now">
+
+
+                
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                      {{ session('success') }}
+                    </div>
+                    @endif
+
                 </div>
             </form>
         </div>

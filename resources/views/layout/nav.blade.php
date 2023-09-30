@@ -31,7 +31,7 @@
     <input type="checkbox" id="check">
    <label for="check" class="ham">
        <i class="ri-menu-line"></i>
+      
    </label>
 
-    {{-- <div class="ham" ><li><i class="ri-menu-line"></i></div></li> --}}
-</div>
+    </div>
